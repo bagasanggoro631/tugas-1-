@@ -1,0 +1,335 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background: #f5f5f5;
+            color: #1a1a1a;
+            min-height: 100vh;
+        }
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+        .logo span {
+            color: #1ea366;
+        }
+        .main-nav {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-nav > li {
+            position: relative;
+        }
+        .main-nav a {
+            text-decoration: none;
+            color: #222;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: block;
+            transition: color 0.2s;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .main-nav a:hover {
+            color: #1ea366;
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #222;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 2rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.02em;
+        }
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            position: relative;
+        }
+        .menu-item {
+            white-space: nowrap;
+            text-decoration: none;
+            color: #222;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.2s;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        .menu-item:hover {
+            color: #1ea366;
+        }
+        .has-submenu .submenu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            border-radius: 0.8rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 0.8rem 0;
+            min-width: 220px;
+            display: none;
+            z-index: 10;
+            border: 1px solid #f0f0f0;
+        }
+        @media (min-width: 769px) {
+            .has-submenu:hover .submenu {
+                display: block;
+            }
+        }
+        .has-submenu.active .submenu {
+            display: block;
+        }
+        .has-submenu > .menu-item-label::after {
+            content: "▾";
+            font-size: 0.6rem;
+            margin-left: 0.3rem;
+            vertical-align: middle;
+        }
+        .submenu a {
+            display: block;
+            padding: 0.7rem 1.5rem;
+            color: #333;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .submenu a:hover {
+            background: #f9f9f9;
+            color: #1ea366;
+        }
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .search-input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.8rem;
+            font-size: 0.95rem;
+            min-width: 200px;
+            outline: none;
+            transition: border 0.2s;
+        }
+        .search-input:focus {
+            border-color: #1ea366;
+        }
+        .btn-cari {
+            background: #1ea366;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 0.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-cari:hover {
+            background: #178d52;
+        }
+        .result-box {
+            display: none;
+            margin-top: 2rem;
+        }
+        .student-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .delivery-detail-summary {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+        .progress-container {
+            background: #e9e9e9;
+            border-radius: 20px;
+            height: 12px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #1ea366;
+            border-radius: 20px;
+            transition: width 0.5s ease;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 2rem;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ddd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -30px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #1ea366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #1ea366;
+            font-weight: bold;
+            z-index: 1;
+        }
+        .timeline-item.completed .timeline-icon {
+            background: #1ea366;
+            color: white;
+        }
+        .timeline-content {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .timeline-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0.2rem;
+        }
+        .timeline-text {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .detail-ekspedisi {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            background: #f9f9f9;
+            border-radius: 0.8rem;
+            padding: 1.2rem;
+            font-size: 0.9rem;
+        }
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .detail-label {
+            color: #888;
+            margin-bottom: 0.2rem;
+        }
+        .detail-value {
+            font-weight: 600;
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 0.3rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .has-submenu .submenu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+                display: none;
+                margin-top: 0.3rem;
+            }
+            .has-submenu.active .submenu {
+                display: block;
+            }
+            .menu-grid {
+                gap: 1rem;
+            }
+            .detail-ekspedisi {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+        }

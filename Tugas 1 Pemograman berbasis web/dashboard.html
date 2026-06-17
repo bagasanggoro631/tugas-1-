@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UT Daerah</title>
+   <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo" id="logoLink">UT<span> Daerah</span></a>
+            <ul class="main-nav" id="mainNav">
+                <li><a id="navDashboard" href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn">☰</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="dashboardSection">
+            <div class="card">
+                <h2>Menu</h2>
+                <div class="menu-grid">
+                    <a href="stock.html" class="menu-item">Informasi Bahan Ajar</a>
+                    <span class="menu-item" id="goToTracking">Tracking Pengiriman</span>
+                    <div class="menu-item has-submenu" id="laporanToggle">
+                        <span class="menu-item-label">Laporan</span>
+                        <div class="submenu" id="submenuLaporan">
+                            <a href="monitoring-do.html">Monitoring Progress DO</a>
+                            <a href="rekap-bahan-ajar.html">Rekap Bahan Ajar</a>
+                        </div>
+                    </div>
+                    <a href="histori-transaksi.html" class="menu-item">Histori Transaksi</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="trackingSection" class="hidden">
+            <div class="card">
+                <h2>Cari Pengiriman</h2>
+                <div class="search-form">
+                    <input type="text" class="search-input" id="noDO" placeholder="Masukkan Nomor DO/Billing">
+                    <button class="btn-cari" id="btnCari">Cari</button>
+                </div>
+                <div class="result-box" id="resultBox"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboar.js">
+
+    </script>
+</body>
+</html>

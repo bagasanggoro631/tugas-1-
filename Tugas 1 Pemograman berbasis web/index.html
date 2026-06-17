@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>UT-Daerah | Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="ut-header">
+            <img src="Universitas_Terbuka Logo.png" alt="Logo UT" class="ut-Logo">
+            <h1>UT - Daerah</h1>
+            <p>Sistem Pemesanan Bahan Ajar</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label>📧 Email (UT)</label>
+                <input type="email" id="emailInput" placeholder="contoh: mahasiswa@ut.ac.id" required>
+            </div>
+            <div class="form-group">
+                <label>🔒 Password</label>
+                <input type="password" id="passwordInput" placeholder="Masukkan password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <div class="flex-buttons" style="margin-top: 1.5rem;">
+            <button id="lupaPasswordBtn" type="button" class="btn btn-outline">❓ Lupa Password</button>
+            <button id="daftarBtn" type="button" class="btn btn-outline">📝 Daftar</button>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL LUPA PASSWORD -->
+<div id="lupaModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3>🔄 Lupa Password</h3>
+        <p style="margin-bottom: 1rem;">Masukkan email terdaftar, kami akan mengirimkan tautan reset (simulasi).</p>
+        <input type="email" id="resetEmail" placeholder="Email anda" style="margin-bottom: 0.5rem;">
+        <button id="kirimResetBtn" class="btn btn-primary">Kirim Instruksi</button>
+        <button class="btn close-modal closeBtn">Tutup</button>
+    </div>
+</div>
+
+<!-- MODAL DAFTAR -->
+<div id="daftarModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3>📋 Daftar Akun Baru</h3>
+        <input type="email" id="regEmail" placeholder="Email aktif" autocomplete="off">
+        <input type="password" id="regPassword" placeholder="Password (min. 4 karakter)">
+        <input type="password" id="regConfirm" placeholder="Konfirmasi Password">
+        <button id="registerSubmitBtn" class="btn btn-primary">Daftar Sekarang</button>
+        <button class="btn close-modal closeBtn">Batal</button>
+    </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

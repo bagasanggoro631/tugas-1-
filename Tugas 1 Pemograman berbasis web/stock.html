@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Informasi Stok Bahan Ajar | Manajemen BMP</title>
+    <link rel="stylesheet" href="stock.css">
+</head>
+<body>
+    <!-- ========== NAVBAR (HEADER) YANG DITAMBAHKAN ========== -->
+    <header class="top-header">
+        <div class="header-container">
+            <a href="#" class="logo" id="logoLink">UT<span> Daerah</span></a>
+            <ul class="main-nav" id="mainNav">
+                <li><a id="navDashboard" href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== KONTEN ASLI HALAMAN STOK (TIDAK DIUBAH) ========== -->
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span>📚 STOK BAHAN AJAR</span>
+                <span style="font-size: 0.85rem;">Sistem Manajemen BMP</span>
+            </h1>
+            <div class="stats" id="statsPanel">
+                <div class="stat-card">
+                    <div class="stat-label">Total Judul</div>
+                    <div class="stat-value" id="totalItems">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Stok Keseluruhan</div>
+                    <div class="stat-value" id="totalStock">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-title">Tambah Baris Stok Baru</div>
+            <div class="form-grid" id="addFormGrid">
+                <div class="input-group">
+                    <label>Kode Lokasi</label>
+                    <input type="text" id="kodeLokasi" placeholder="Contoh: OTMP04" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Kode Barang</label>
+                    <input type="text" id="kodeBarang" placeholder="Contoh: KOM4201">
+                </div>
+                <div class="input-group">
+                    <label>Nama Barang</label>
+                    <input type="text" id="namaBarang" placeholder="Nama bahan ajar">
+                </div>
+                <div class="input-group">
+                    <label>Jenis Barang</label>
+                    <input type="text" id="jenisBarang" placeholder="BMP / Modul / Buku">
+                </div>
+                <div class="input-group">
+                    <label>Edisi (Angka)</label>
+                    <input type="number" id="edisi" min="1" step="1" value="1">
+                </div>
+                <div class="input-group">
+                    <label>Stok</label>
+                    <input type="number" id="stok" min="0" step="1" value="0">
+                </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+                <button class="btn-add" id="btnTambahBaris">+ Tambah Baris Stok Baru</button>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="stock-table" id="stockTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode Lokasi</th>
+                        <th>Kode Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Jenis Barang</th>
+                        <th>Edisi</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr class="empty-row"><td colspan="8">Memuat data bahan ajar...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="stock.js"></script>
+</body>
+</html>
